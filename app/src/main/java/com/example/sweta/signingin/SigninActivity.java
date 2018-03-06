@@ -31,21 +31,9 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        Boolean isLoggedIn = sharedPreferences.getBoolean("IsLoggedIn", false);
 
-        if (isLoggedIn) {
-
-
-            Intent intent = new Intent(SigninActivity.this, MainActivity.class);
-            intent.putExtra("Intent", "This is my intent");
-            startActivity(intent);
-
-        } else {
-
-            findView();
-            onClickListener();
-        }
+        findView();
+        onClickListener();
 
 
     }
