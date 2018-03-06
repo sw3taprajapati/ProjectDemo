@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SigningIn</string>
+    <string name="sign_in">Sign in</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="sign_up">Sign up</string>
+    <string name="re_enter_password">Re Enter Password</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Others</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="new_password">New Password</string>
+    <string name="age">Age</string>
+    <string name="description">Facebook Icon</string>
+    <string name="name">Name</string>
+    <string name="roll">Roll No</string>
+
+</resources>
