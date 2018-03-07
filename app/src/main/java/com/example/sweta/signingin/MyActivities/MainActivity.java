@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
 import com.example.sweta.signingin.R;
 import com.example.sweta.signingin.SigninActivity;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView myRecyclerView;
     private MyAdapter myAdapter;
+    private Toolbar toolbar;
     List<Student> nameArray;
 
     @Override
@@ -29,11 +31,20 @@ public class MainActivity extends AppCompatActivity {
         Boolean isLoggedIn = sharedPreferences.getBoolean("IsLoggedIn", false);
 
         initActivity();
+        initToolbar();
         initRecyclerView();
     }
+
     private void initActivity() {
 
         myRecyclerView = findViewById(R.id.recyclerView);
+        toolbar = findViewById(R.id.toolBarLayout);
+    }
+
+    private void initToolbar() {
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle("My");
     }
 
     private void initRecyclerView() {

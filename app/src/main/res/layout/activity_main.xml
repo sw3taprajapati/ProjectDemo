@@ -3,11 +3,15 @@
     android:layout_height="match_parent"
     android:background="@color/lightpurple"
     android:orientation="horizontal">
+    <include android:id="@+id/toolBarLayout"
+        layout="@layout/toolbar"
+/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/nameField"
         android:text="@string/name"
+        android:layout_below="@+id/toolBarLayout"
         android:padding="15dp"
         />
 

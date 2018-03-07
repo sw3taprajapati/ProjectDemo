@@ -2,6 +2,7 @@ package com.example.sweta.signingin;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,23 +17,32 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        Boolean isLoggedIn = sharedPreferences.getBoolean("IsLoggedIn", false);
+        final Boolean isLoggedIn = sharedPreferences.getBoolean("IsLoggedIn", false);
 
-        if (isLoggedIn) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
 
-
-            Intent intent = new Intent(this, MainActivity.class);
-            //intent.putExtra("Intent", "This is my intent");
-            startActivity(intent);
-
-        } else {
+                if (isLoggedIn) {
 
 
-            Intent intent = new Intent(this, SigninActivity.class);
-            //intent.putExtra("Intent", "This is my intent");
-            startActivity(intent);
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    //intent.putExtra("Intent", "This is my intent");
+                    startActivity(intent);
+
+                } else {
 
 
-        }
+                    Intent intent = new Intent(SplashActivity.this, SigninActivity.class);
+                    //intent.putExtra("Intent", "This is my intent");
+                    startActivity(intent);
+
+
+                }
+
+            }
+        },2000);
+
+
     }
 }
