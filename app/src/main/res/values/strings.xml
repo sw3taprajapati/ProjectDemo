@@ -15,5 +15,6 @@
     <string name="description">Facebook Icon</string>
     <string name="name">Name</string>
     <string name="roll">Roll No</string>
+    <string name="logout">Log Out</string>
 
 </resources>

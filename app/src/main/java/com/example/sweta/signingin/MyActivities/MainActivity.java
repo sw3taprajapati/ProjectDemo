@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.sweta.signingin.R;
 import com.example.sweta.signingin.SigninActivity;
@@ -14,11 +17,13 @@ import com.example.sweta.signingin.SigninActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView myRecyclerView;
     private MyAdapter myAdapter;
     List<Student> nameArray;
+    Button logout;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +35,19 @@ public class MainActivity extends AppCompatActivity {
 
         initActivity();
         initRecyclerView();
+        onClickListener();
+        initToolbar();
     }
     private void initActivity() {
 
         myRecyclerView = findViewById(R.id.recyclerView);
+        logout=findViewById(R.id.btnLogout);
+        toolbar=findViewById(R.id.toolBarInclude);
+    }
+
+    private void initToolbar(){
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Welcome to NCCS");
     }
 
     private void initRecyclerView() {
@@ -77,5 +91,26 @@ public class MainActivity extends AppCompatActivity {
         myRecyclerView.setAdapter(myAdapter);
     }
 
+    private void onClickListener(){
+        logout.setOnClickListener(this);
+    }
 
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()){
+
+            case R.id.btnLogout:
+
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                Boolean isLoggedIn = sharedPreferences.getBoolean("IsLoggedIn", false);
+
+                Intent intent = new Intent(MainActivity.this, SigninActivity.class);
+                startActivity(intent);
+                break;
+
+            default:
+                break;
+        }
+    }
 }

@@ -1,26 +1,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightpurple"
-    android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameField"
-        android:text="@string/name"
-        android:padding="15dp"
-        />
+    android:background="@color/lightpurple">
 
-    <TextView
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolBarInclude"/>
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/roll"
-        android:text="@string/roll"
+        android:layout_below="@+id/toolBarInclude"
+        android:id="@+id/btnLogout"
+        android:text="@string/logout"
+        android:padding="15dp"
         android:layout_alignParentEnd="true"
-        android:padding="15dp"/>
+        android:layout_alignParentRight="true" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_below="@+id/nameField"
+        android:layout_below="@+id/btnLogout"
         android:id="@+id/recyclerView"
         android:padding="15dp"
         android:layout_width="match_parent"

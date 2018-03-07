@@ -81,8 +81,8 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                             startLogInActivity();
 
                             Intent intent = new Intent(SigninActivity.this, MainActivity.class);
-                            intent.putExtra("Intent", "This is my intent");
                             startActivity(intent);
+                            finish();
                         } else {
                             Toast.makeText(this, "Username or password is incorrect", Toast.LENGTH_SHORT).show();
                         }

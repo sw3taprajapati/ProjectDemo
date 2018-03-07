@@ -6,6 +6,9 @@ import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Toolbar;
 
 import com.example.sweta.signingin.MyActivities.MainActivity;
 
@@ -16,7 +19,12 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+       /* this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
         setContentView(R.layout.activity_splash);
+
         SharedPreferences sharedPreferences = getDefaultSharedPreferences(this);
         final Boolean isLoggedIn = sharedPreferences.getBoolean("IsLoggedIn", false);
 
