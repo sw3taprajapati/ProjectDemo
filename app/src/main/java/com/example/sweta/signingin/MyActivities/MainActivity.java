@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.sweta.signingin.R;
 import com.example.sweta.signingin.SigninActivity;
@@ -15,11 +17,12 @@ import com.example.sweta.signingin.SigninActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView myRecyclerView;
     private MyAdapter myAdapter;
     private Toolbar toolbar;
+    private Button button;
     List<Student> nameArray;
 
     @Override
@@ -33,12 +36,18 @@ public class MainActivity extends AppCompatActivity {
         initActivity();
         initToolbar();
         initRecyclerView();
+        setListener();
     }
 
     private void initActivity() {
 
         myRecyclerView = findViewById(R.id.recyclerView);
         toolbar = findViewById(R.id.toolBarLayout);
+        button=findViewById(R.id.LogoutButton);
+    }
+
+    private void setListener(){
+        button.setOnClickListener(this);
     }
 
     private void initToolbar() {
@@ -88,5 +97,18 @@ public class MainActivity extends AppCompatActivity {
         myRecyclerView.setAdapter(myAdapter);
     }
 
+    public void onBackPressed(){
+        super.onBackPressed();
+        finish();
+    }
 
+
+    @Override
+    public void onClick(View view) {
+
+            Intent intent = new Intent(this, SigninActivity.class);
+            startActivity(intent);
+            onBackPressed();
+
+    }
 }

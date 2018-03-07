@@ -14,13 +14,22 @@
         android:layout_below="@+id/toolBarLayout"
         android:padding="15dp"
         />
+    <Button
+        android:id="@+id/LogoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/roll"
+        android:text="Logout"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/roll"
         android:text="@string/roll"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/toolBarLayout"
         android:padding="15dp"/>
 
     <android.support.v7.widget.RecyclerView
