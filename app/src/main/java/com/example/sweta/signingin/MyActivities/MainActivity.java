@@ -1,16 +1,22 @@
 package com.example.sweta.signingin.MyActivities;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.sweta.signingin.MyActivities.Utils.PreferenceUtils;
 import com.example.sweta.signingin.R;
 import com.example.sweta.signingin.SigninActivity;
 
@@ -105,10 +111,65 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        if (view == button) {
+            //DefaultDialog
+            /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            Intent intent = new Intent(this, SigninActivity.class);
-            startActivity(intent);
-            onBackPressed();
+            builder.setTitle("Title");
+            builder.setMessage("Are you sure you want to logout?");
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    PreferenceUtils.startLogInActivity(MainActivity.this, false);
+                    Intent intent = new Intent(MainActivity.this, SigninActivity.class);
+                    startActivity(intent);
+                    onBackPressed();
+                    dialogInterface.dismiss();
+                }
+            });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            });
+            final AlertDialog dialog = builder.create();
+            dialog.show(); */
+
+            //customDialog
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setCancelable(true);
+            LayoutInflater inflater=(LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View viewdialog=inflater.inflate(R.layout.dialog_custom,null);
+            builder.setView(viewdialog);
+            final AlertDialog alertDialog=builder.create();
+
+            TextView txtTitle=viewdialog.findViewById(R.id.txtTitle);
+            Button btnOk=viewdialog.findViewById(R.id.btnOk);
+            Button btnCancel=viewdialog.findViewById(R.id.btnCancel);
+            btnOk.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PreferenceUtils.startLogInActivity(MainActivity.this, false);
+                    Intent intent = new Intent(MainActivity.this, SigninActivity.class);
+                    startActivity(intent);
+                    onBackPressed();
+                    alertDialog.dismiss();
+
+                }
+            });
+
+            btnCancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    alertDialog.dismiss();
+                }
+            });
+            alertDialog.show();
+
+        }
+
 
     }
 }
