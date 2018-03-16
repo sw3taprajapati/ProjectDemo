@@ -1,16 +1,12 @@
-package com.example.sweta.signingin;
+package com.example.sweta.NCCS;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Toolbar;
 
-import com.example.sweta.signingin.MyActivities.MainActivity;
+import com.example.sweta.NCCS.MyActivities.MainActivity;
 
 import static android.preference.PreferenceManager.*;
 

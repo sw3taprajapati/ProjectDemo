@@ -1,14 +1,12 @@
-package com.example.sweta.signingin.MyActivities;
+package com.example.sweta.NCCS.MyActivities;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.sweta.signingin.R;
+import com.example.sweta.NCCS.R;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 
 /**

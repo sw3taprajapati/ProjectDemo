@@ -1,4 +1,4 @@
-package com.example.sweta.signingin;
+package com.example.sweta.NCCS;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

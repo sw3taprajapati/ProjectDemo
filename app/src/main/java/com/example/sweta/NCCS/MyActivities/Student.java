@@ -1,4 +1,4 @@
-package com.example.sweta.signingin.MyActivities;
+package com.example.sweta.NCCS.MyActivities;
 
 /**
  * Created by sweta on 3/5/18.

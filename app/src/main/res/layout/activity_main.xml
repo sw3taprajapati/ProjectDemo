@@ -2,9 +2,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightpurple">
+<RelativeLayout
+    android:id="@+id/relativeLayoutView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
 
     <include layout="@layout/toolbar"
         android:id="@+id/toolBarInclude"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,7 +19,7 @@
         android:text="@string/logout"
         android:padding="15dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_below="@+id/btnLogout"
@@ -21,4 +27,12 @@
         android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+</RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarMy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+        />
 </RelativeLayout>

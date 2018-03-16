@@ -1,11 +1,10 @@
-package com.example.sweta.signingin.MyActivities;
+package com.example.sweta.NCCS.MyActivities;
 
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.sweta.signingin.R;
+import com.example.sweta.NCCS.R;
 
 /**
  * Created by sweta on 3/4/18.

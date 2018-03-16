@@ -1,11 +1,10 @@
-package com.example.sweta.signingin;
+package com.example.sweta.NCCS;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Layout;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,6 +34,7 @@ public class SignUpActivity extends AppCompatActivity implements CompoundButton.
     Button signUp;
     ImageView imageViewer;
     private List<String> ageList;
+    private Toolbar toolbar;
 
     private String userNameText, passWordText, confirmPasswordTxt;
 
@@ -47,8 +47,14 @@ public class SignUpActivity extends AppCompatActivity implements CompoundButton.
         setListener();
         initSpinner();
         getIntentData();
+        initToolbar();
 
     }
+    private void initToolbar(){
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Welcome to NCCS");
+    }
+
 
     public void getViewsData() {
 
@@ -61,6 +67,7 @@ public class SignUpActivity extends AppCompatActivity implements CompoundButton.
         spinnerAge = findViewById(R.id.age);
         signUp = findViewById(R.id.signup);
         imageViewer = findViewById(R.id.imgViewer);
+        toolbar=findViewById(R.id.toolBarInclude);
     }
 
     public void getIntentData() {

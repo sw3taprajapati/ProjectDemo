@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SigningIn</string>
+    <string name="app_name">NCCS</string>
     <string name="sign_in">Sign in</string>
     <string name="user_name">Username</string>
     <string name="password">Password</string>
@@ -16,5 +16,7 @@
     <string name="name">Name</string>
     <string name="roll">Roll No</string>
     <string name="logout">Log Out</string>
+    <string name="title">Welcome to NCCS</string>
+    <string name="aboutus">National College of Computer Studies (NCCS), college of IT and Management, is a highly professional and experienced college based in Kathmandu which was established in 1999.It comprises of multitalented professionals considered among the best in the industry. It educates all students, not only to face the challenges of the fast-moving industry but also to perform exceedingly well. NCCS is fully dedicated in providing university curriculum to students. It is affiliated with Nepal's oldest and prestigious Tribhuvan University. In this regard it is conducting four years Bachelor of Information Management program, three years Bachelor of Hotel Management Program and four years Bachelor of Science in Computer Science and Information Technology.</string>
 
 </resources>

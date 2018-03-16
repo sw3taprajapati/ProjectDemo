@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sweta.signingin">
+    package="com.example.sweta.NCCS">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/logo_of_nccs"
+        android:icon="@mipmap/nccs_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/logo_of_nccs"
+        android:roundIcon="@mipmap/nccs_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
-            android:theme="@style/AppTheme.Splash"
-            android:noHistory="true">
+        <activity
+            android:name="com.example.sweta.ViewPager.AboutUs"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +22,7 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".MyActivities.MainActivity" />
-        <activity android:name=".SigninActivity"></activity>
+        <activity android:name=".SigninActivity" />
     </application>
 
 </manifest>
