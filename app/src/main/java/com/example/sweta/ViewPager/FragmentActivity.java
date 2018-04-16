@@ -43,10 +43,10 @@ public class FragmentActivity extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-       /* if(view==btnSwitch){
+        if(view==btnSwitch){
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.frameFragment, new SecondFragment())
                     .commit();
-        }*/
+        }
     }
 }
